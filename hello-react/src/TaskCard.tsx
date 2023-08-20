@@ -1,7 +1,15 @@
 /* eslint-disable react/prop-types */
+import React from 'react'
 import './TaskCard.css'
 
-const TaskCard = (props) => {
+interface taskcardProperties {
+  title:string;
+  statusOfTask:string;
+  dueDate?:string;
+  completedAtDate?:string;
+  assigneeName:string;
+}
+const TaskCard : React.FC<taskcardProperties> = (props) => {
   const status = props.statusOfTask
   console.log(props)
     return (
