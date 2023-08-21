@@ -14,7 +14,7 @@ function App() {
       <div className="grid grid-cols-5">
         <div className="TaskCell col-start-2 col-span-1 rounded">
           <h1 className="text-center text-gray-600 text-xl py-3 font-bold">Pending</h1>
-          <TaskCard title="Build the website with static content" dueDate="4rth April" assigneeName="Pavan Kumar" statusOfTask="pending"/>
+          <TaskCard title="Build the website with static content" dueDate="10th April" assigneeName="Pavan Kumar" statusOfTask="pending"/>
           <TaskCard title="Add a blog" dueDate="18th April" assigneeName="Sandeep" statusOfTask="pending"/>
           <div className="bg-gray-300 rounded px-2 py-1">
             <h3>+ New Task</h3>
