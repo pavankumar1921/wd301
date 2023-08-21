@@ -15,9 +15,10 @@ const TaskCard : React.FC<taskcardProperties> = (props) => {
     return (
       <div className="TaskItem rounded-lg py-3 px-2">
         <h2 className="text-xl font-bold">{props.title}</h2>
-        {status === 'pending' ? (
+        {status === 'pending' && props.dueDate && (
           <p>Due on: {props.dueDate}</p>
-        ):(
+        )}
+        {status === 'completed' && props.completedAtDate && (
           <p>Completed on: {props.completedAtDate}</p>
         )}
         <p>Assignee: {props.assigneeName}</p>
