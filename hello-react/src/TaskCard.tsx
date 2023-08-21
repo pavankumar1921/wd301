@@ -5,8 +5,8 @@ import './TaskCard.css'
 interface taskcardProperties {
   title:string;
   statusOfTask:string;
-  dueDate?:Date;
-  completedAtDate?:Date;
+  dueDate?:string;
+  completedAtDate?:string;
   assigneeName:string;
 }
 const TaskCard : React.FC<taskcardProperties> = (props) => {
@@ -16,11 +16,11 @@ const TaskCard : React.FC<taskcardProperties> = (props) => {
       <div className="TaskItem rounded-lg py-3 px-2">
         <h2 className="text-xl font-bold">{props.title}</h2>
         {status === 'pending' ? (
-          <p>Due Date : {props.dueDate?.toISOString().slice(0,10)}</p>
+          <p>Due on: {props.dueDate}</p>
         ):(
-          <p>Completed On : {props.completedAtDate?.toISOString().slice(0,10)}</p>
+          <p>Completed on: {props.completedAtDate}</p>
         )}
-        <p>Assignee : {props.assigneeName}</p>
+        <p>Assignee: {props.assigneeName}</p>
       </div>
     )
 }
