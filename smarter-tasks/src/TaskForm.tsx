@@ -46,15 +46,15 @@ render(){
             <form onSubmit={this.addTask}>
                 <div className="p-4">
                 <label className="">Title: </label>
-                <input type="text" className="p-2 border border-gray-300 rounded text-sm font-medium text-gray-700" id="todoTitle" value={this.state.title} onChange={this.titleChanged}/>
+                <input type="text" className="p-2 border border-gray-300 rounded text-sm font-medium text-gray-700" id="todoTitle" value={this.state.title} onChange={this.titleChanged} required/>
                 </div>
                 <div className="p-4">
                 <label>DueDate:</label>
-                <input id="todoDescription" className="p-2 border border-gray-300 rounded text-sm font-medium text-gray-700" value={this.state.description} onChange={this.descriptionChanged}/>
+                <input id="todoDueDate" className="p-2 border border-gray-300 rounded text-sm font-medium text-gray-700" value={this.state.dueDate} onChange={this.dueDateChanged} required/>
                 </div>
                 <div className="p-4">
                 <label>Description:</label>
-                <input id="todoDueDate" className="p-2 border border-gray-300 rounded text-sm font-medium text-gray-700" value={this.state.dueDate} onChange={this.dueDateChanged}/>
+                <input id="todoDescription" className="p-2 border border-gray-300 rounded text-sm font-medium text-gray-700" value={this.state.description} onChange={this.descriptionChanged} />
                 </div>
                 <div className="place-content-center">
                 <button id="addTaskButton" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" type="submit">Add item</button>
