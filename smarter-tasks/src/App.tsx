@@ -1,12 +1,12 @@
-import './App.css'
-import TaskApp from './TaskApp'
+import "./App.css";
+import TaskApp from "./TaskApp";
 
 function App() {
-  return(
-    <div className='App'>
+  return (
+    <div className="App">
       <TaskApp />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
