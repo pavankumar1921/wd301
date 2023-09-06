@@ -8,28 +8,10 @@ interface Props {
   handleRemovedTask : (id:number) => void
 }
 
-// interface State {}
-
-// class TaskList extends React.Component<Props, State> {
-//   render() {
-//     return this.props.tasks.map((task, idx) => (
-//       <Task
-//         key={idx}
-//         title={task.title}
-//         dueDate={task.dueDate}
-//         description={task.description}
-//       />
-//     ));
-//   }
-// }
-
 const TaskList = (props:Props) =>{
   const list = props.tasks.map((task,idx)=>(
     <Task
     key={idx}
-    // title={task.title}
-    // description={task.description}
-    // dueDate={task.dueDate}
     item={task}
     removeTask={()=>props.handleRemovedTask(idx)}
     />
