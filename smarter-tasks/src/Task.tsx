@@ -14,7 +14,7 @@ const Task = (props:TaskProp) => {
       <p className="text-sm text-slate-500">
         Description: {item.description}
       </p>
-      <button className="deleteTaskButton bg-gray-300 hover:bg-gray-600" onClick={()=>removeTask(item)}>Delete Task</button>
+      <button id="deleteTaskButton" className="deleteTaskButton bg-gray-300 hover:bg-gray-600" onClick={()=>removeTask(item)}>Delete Task</button>
     </div>
   );
 }
