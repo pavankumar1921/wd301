@@ -8,7 +8,7 @@ interface Props {
   handleRemovedTask : (id:number) => void
 }
 
-interface State {}
+// interface State {}
 
 // class TaskList extends React.Component<Props, State> {
 //   render() {

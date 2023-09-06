@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+// import React from "react";
 import { TaskItem } from "./types";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
@@ -46,7 +46,7 @@ interface TaskAppState {
 //     );
 //   }
 // }
-const TaskApp = (props:TaskAppProp) => {
+const TaskApp = (_props:TaskAppProp) => {
 //   const [taskAppState, setTaskAppState] = React.useState<TaskAppState>({
 //     tasks: [],
 //   });
