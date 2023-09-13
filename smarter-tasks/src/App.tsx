@@ -8,7 +8,7 @@ import TaskDetailsPage from "./pages/TaskDetailsPage";
 import Layout from "./Layout";
 import Signin from "./pages/Signin";
 import NotFound from "./pages/NotFound";
-import ProtectedRoute from "./ProtectedRoute";
+// import ProtectedRoute from "./ProtectedRoute";
 // import ProtectedRoute from "./ProtectedRoute";
 // function App() {
 //   return (
@@ -28,8 +28,9 @@ const router = createBrowserRouter([
   },
   {
     element: (
+      
          <Layout />
-       
+             
 
     ),
     children: [
