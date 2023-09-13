@@ -36,15 +36,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "home",
-        element: (<HomePage />)
+        element: <HomePage />
       },
       {
         path: "tasks",
-        element: (<TaskListPage />)
+        element: <TaskListPage />
       },
       {
         path:"tasks/:id",
-        element:(<TaskDetailsPage/>)
+        element:<TaskDetailsPage/>
       },
       {
         path:"notfound",
