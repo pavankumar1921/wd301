@@ -1,4 +1,9 @@
-[[redirects]]
+# example netlify.toml
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "./smarter-tasks/"
+  [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
