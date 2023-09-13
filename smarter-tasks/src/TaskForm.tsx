@@ -1,6 +1,7 @@
 import React from "react";
 import { TaskItem } from "./types";
 import "./TaskCard.css";
+import { useState } from "react";
 
 interface TaskFormProps {
   addTask: (task: TaskItem) => void;
@@ -16,6 +17,7 @@ const TaskForm = (props:TaskFormProps) =>{
     description:"",
     dueDate:""
   })
+  const [currentTaskId,setCurrentTaskId] = useState<number>(1)
   const titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     console.log(`${event.target.value}`);
     setFormState({ ...formState, title: event.target.value });
@@ -36,7 +38,14 @@ const TaskForm = (props:TaskFormProps) =>{
     if (formState.title.length === 0 || formState.dueDate.length === 0) {
       return;
     }
-    props.addTask(formState);
+    const newTask : TaskItem={
+      id: currentTaskId.toString(),
+      title: formState.title,
+      description: formState.description,
+      dueDate:formState.dueDate
+    }
+    props.addTask(newTask);
+    setCurrentTaskId(currentTaskId + 1) //incrementing id by 1
     setFormState({ title: "", description: "", dueDate: "" });
   };
   return (
