@@ -3,7 +3,7 @@ import { createBrowserRouter,Navigate } from "react-router-dom";
 import Signin from "../pages/signin"
 import Signup from "../pages/signup"
 import AccountLayout from "../layouts/account";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoutes from "./ProtectedRoutes";
 import Projects from "../pages/projects";
 import Members from "../pages/members";
 import Logout from "../pages/logout";
@@ -34,9 +34,9 @@ const router = createBrowserRouter([
   {
     path:"account",
     element: (
-    <ProtectedRoute>
+    <ProtectedRoutes>
         <AccountLayout/>
-    </ProtectedRoute>
+    </ProtectedRoutes>
     ),
     children: [
       {index:true, element:<Navigate to="/account/projects" replace />},
