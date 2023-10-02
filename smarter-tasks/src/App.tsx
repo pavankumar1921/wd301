@@ -46,7 +46,7 @@
 // }
 
 // export default App
-import React,{useContext} from "react";
+import {useContext} from "react";
 import { RouterProvider } from "react-router-dom";
 import {ThemeContext} from "./context/theme";
 import router from "./routes"
