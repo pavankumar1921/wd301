@@ -1,80 +1,79 @@
-import { createBrowserRouter,Navigate, } from "react-router-dom";
-
-import Signin from "../pages/signin"
-import Signup from "../pages/signup"
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import AccountLayout from "../layouts/account";
-import ProtectedRoutes from "./ProtectedRoutes";
+import Signin from "../pages/signin";
+import Signup from "../pages/signup";
 import Projects from "../pages/projects";
 import Members from "../pages/members";
 import Logout from "../pages/logout";
-import NotFound from "../pages/Notfound"
 import ProjectContainer from "../pages/projects/ProjectContainer";
-import ProjectDetails from "../pages/project_details/ProjectDetails";
+import ProjectDetails from "../pages/project_details";
 import NewTask from "../pages/tasks/NewTask";
+import ProtectedRoutes from "./ProtectedRoutes";
+import TaskDetailsContainer from "../pages/tasks/TaskDetailsContainer";
 
 const router = createBrowserRouter([
-  {path:"/",element:<Navigate to="/account/projects" replace />},
+  { path: "/", element: <Navigate to="/account/projects" replace /> },
   {
-    path: "/", 
-    element: <Signin />
+    path: "/",
+    element: <Signin />,
   },
   {
-    path: "/signin", 
-    element: <Signin />
+    path: "/signin",
+    element: <Signin />,
   },
   {
-    path:"/logout",
-    element:<Logout/>
+    path: "/signup",
+    element: <Signup />,
   },
   {
-    path: "/signup", 
-    element: <Signup />
+    path: "/logout",
+    element: <Logout />,
   },
   {
-    path:"/notfound",
-    element: <NotFound/>
-  },
-  {
-    path:"account",
+    path: "account",
     element: (
-    <ProtectedRoutes>
-        <AccountLayout/>
-    </ProtectedRoutes>
+      <ProtectedRoutes>
+        <AccountLayout />
+      </ProtectedRoutes>
     ),
     children: [
-      {index:true, element:<Navigate to="/account/projects" replace />},
-        {
-            path:"projects",
-            element: <ProjectContainer/>,
-            children:[
-              {index:true,element:<Projects/>},
+      { index: true, element: <Navigate to="/account/projects" replace /> },
+      {
+        path: "projects",
+        element: <ProjectContainer />,
+        children: [
+          { index: true, element: <Projects /> },
+          {
+            path: ":projectID",
+            element: <ProjectDetails />,
+            children: [
+              { index: true, element: <></> },
               {
-                path: ":projectID",
-                element: <ProjectDetails/>,
+                path: "tasks",
                 children: [
-                  { index: true, element: <></> },
+                  { index: true, element: <Navigate to="../" /> },
                   {
-                    path: "tasks",
+                    path: "new",
+                    element: <NewTask />,
+                  },
+                  {
+                    path: ":taskID",
                     children: [
-                      { index: true, element: <Navigate to="../" /> },
-                      {
-                        path: "new",
-                        element: <NewTask/> },
-                      {
-                        path: ":taskID",
-                        children: [{ index: true, element: <>Show Task Details</> }],
-                      },
+                      { index: true, element: <TaskDetailsContainer/> },
                     ],
                   },
-                ]
-              }
-            ]
-        },
-        {
-            path:"members",
-            element: (<Members/>)
-        }
-    ]
-  }
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path: "members",
+        element: <Members />,
+      },
+    ],
+  },
 ]);
+
 export default router;

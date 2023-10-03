@@ -44,6 +44,8 @@ export const addTask = async (
 export const reorderTasks = (dispatch: TasksDispatch, newState: ProjectData)  => {
   dispatch({type: TaskListAvailableAction.REORDER_TASKS, payload: newState})
 }
+
+
 export const refreshTasks = async (
   dispatch: TasksDispatch,
   projectID: string
