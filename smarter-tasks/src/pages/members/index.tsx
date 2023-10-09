@@ -10,9 +10,10 @@ const Members = () => {
         <NewMember />
       </div>
       <ErrorBoundary>
-        <Suspense fallback={<div className="suspense-loading"></div>}>Loading...</Suspense>
+        <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
+        <MembersList/>
+        </Suspense>
       </ErrorBoundary>
-      <MembersList />
         </>
     )
 }
