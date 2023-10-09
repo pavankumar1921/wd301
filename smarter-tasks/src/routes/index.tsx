@@ -8,7 +8,7 @@ import Logout from "../pages/logout";
 import ProjectContainer from "../pages/projects/ProjectContainer";
 import ProjectDetails from "../pages/project_details";
 import NewTask from "../pages/tasks/NewTask";
-import ProtectedRoutes from "./ProtectedRoutes";
+import ProtectedRoute from "./ProtectedRoute";
 import TaskDetailsContainer from "../pages/tasks/TaskDetailsContainer";
 
 const router = createBrowserRouter([
@@ -32,9 +32,9 @@ const router = createBrowserRouter([
   {
     path: "account",
     element: (
-      <ProtectedRoutes>
+      <ProtectedRoute>
         <AccountLayout />
-      </ProtectedRoutes>
+      </ProtectedRoute>
     ),
     children: [
       { index: true, element: <Navigate to="/account/projects" replace /> },
