@@ -14,7 +14,7 @@ export default defineConfig({
         short_name: "Smarter Tasks",
         icons: [
           {
-            "src": "/favicon.ico",
+            "src": "/favicon.png",
             "sizes": "64x64 32x32 24x24 16x16",
             "type": "image/x-icon"
           },
@@ -29,12 +29,12 @@ export default defineConfig({
             "sizes": "32x32"
           },
           {
-            "src": "/pwa-192x192.png",
+            "src": "/android-chrome-192x192.png",
             "type": "image/png",
             "sizes": "192x192"
           },
           {
-            "src": "/pwa-512x512.png",
+            "src": "/android-chrome-192x192.png",
             "type": "image/png",
             "sizes": "512x512",
             "purpose": "any maskable" // Icon format that ensures that your PWA icon looks great on all Android devices
