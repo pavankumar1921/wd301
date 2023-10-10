@@ -1,7 +1,7 @@
-import MembersList from "./MemberList"
-import NewMember from "./NewMember"
-import { Suspense } from "react"
+import { Suspense,lazy } from "react"
 import ErrorBoundary from "../../components/ErrorBoundary"
+const MembersList = lazy(() => import("./MemberList"))
+const NewMember  =lazy(() => import("./NewMember"))
 const Members = () => {
     return (
         <>

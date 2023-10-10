@@ -1,0 +1,6 @@
+--2023-10-03 17:25:26--  https://update.code.visualstudio.com/commit:fdb98833154679dbaa7af67a5a29fe19e55c2b73/server-linux-x64/stable
+Resolving update.code.visualstudio.com (update.code.visualstudio.com)... 13.107.246.72, 13.107.213.72, 2620:1ec:46::72, ...
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|13.107.246.72|:443... failed: Network is unreachable.
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|13.107.213.72|:443... failed: Network is unreachable.
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|2620:1ec:46::72|:443... failed: Network is unreachable.
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|2620:1ec:bdf::72|:443... failed: Network is unreachable.
