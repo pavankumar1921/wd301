@@ -1,20 +1,23 @@
-import { useEffect } from 'react';
-import { fetchMembers } from '../../context/members/actions';
-import { useMembersDispatch } from '../../context/members/context';
-import MembersListItems from './MemberListItems';
+import React, { useEffect, Suspense } from "react";
+import { fetchMembers } from "../../context/members/actions";
+import { useMembersDispatch } from "../../context/members/context";
+const MemberListItems = React.lazy(() => import("./MemberListItems"));
+import ErrorBoundary from "../../components/ErrorBoundary";
 
-const MembersList: React.FC = () => {
+const MemberList: React.FC = () => {
   const dispatchMembers = useMembersDispatch();
 
   useEffect(() => {
     fetchMembers(dispatchMembers);
   }, []);
-
   return (
-    <div className="grid gap-4 grid-cols-4 mt-5">
-      <MembersListItems />
+    <div className="mt-5">
+      <ErrorBoundary>
+        <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
+          <MemberListItems />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 };
-
-export default MembersList;
+export default MemberList;
