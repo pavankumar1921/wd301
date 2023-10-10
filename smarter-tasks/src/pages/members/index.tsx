@@ -1,6 +1,6 @@
 import { Suspense,lazy } from "react"
 import ErrorBoundary from "../../components/ErrorBoundary"
-const MembersList = lazy(() => import("./MemberList"))
+const MemberList = lazy(() => import("./MemberList"))
 const NewMember  =lazy(() => import("./NewMember"))
 const Members = () => {
     return (
@@ -11,7 +11,7 @@ const Members = () => {
       </div>
       <ErrorBoundary>
         <Suspense fallback={<div className="suspense-loading">Loading...</div>}>
-        <MembersList/>
+        <MemberList/>
         </Suspense>
       </ErrorBoundary>
         </>
